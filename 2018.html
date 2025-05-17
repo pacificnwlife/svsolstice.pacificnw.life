@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2018 Gallery</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+    .gallery img { height: 150px; border: 2px solid #ccc; }
+    .gallery a { display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>2018 Photo Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const folder = 'images/2018_thumb/';
+    const largeFolder = 'images/2018_large/';
+    const images = [
+  '10-winter_dredging.jpg',
+  '11-kitty_introduced_to_boat.jpg',
+  '12-everett_slip.jpg',
+  '13-unstepping_the_mast.jpg',
+  '14-unstepping_the_mast.jpg',
+  '15-unstepping_the_mast.jpg',
+  '16-mast_yard.jpg',
+  '17-solstice_naked.jpg',
+  '18-crane_on_the_way_to_step.jpg',
+  '19-stepping_the_mast.jpg',
+  '20-stepping_the_mast.jpg',
+  '21-dock_tune.jpg',
+  '22-looking_for_the_gold.jpg',
+  '23-camano_head.jpg',
+  '24-camano_head.jpg',
+  '25-kitty_adapting_well.jpg',
+  '26-kitty_totally_at_home.jpg',
+  '27-curiosity_and_the_cat-a_little_too_brave.jpg',
+  '28-dungeness_crab.jpg',
+  '29-big_rock_on_a_beach_walk.jpg',
+  '30-sound_sailing.jpg',
+  '31-zodiac_lasted_15yrs-a great dinghy-replaced_w_achilles.jpg',
+  '32-camano_w_family.jpg',
+  '33-starling_coated_stays.jpg',
+  '34-deception_pass_always_exciting.jpg',
+  '35-secret_bay.jpg',
+  '36-pushpit_kitty.jpg',
+  '37-secret_bay.jpg',
+  '38-styling_in_my_life_jacket.jpg',
+  '39-secret_bay.jpg',
+  '40-entrance_to_victoria_bc.jpg',
+  '41-front_and_center_in_victoria.jpg',
+  '42-empress_and_marina.jpg',
+  '43-empress_and_marina.jpg',
+  '44-the_best_poutine_indeed.jpg',
+  '45-downtown_in_the_marina.jpg',
+  '46-cathedral_ceiling.jpg',
+  '47-our_tea_at_the_empress_was_cheaper.jpg',
+  '48-butchart_gardens.jpg',
+  '49-butchart_gardens.jpg',
+  '50-butchart_gardens.jpg',
+  '51-victoria_parliment.jpg',
+  '52-passing_the_docking_cruise_ship.jpg',
+  '53-bedwell_harbor.jpg',
+  '54-bedwell_harbor_after_a_beach_walk.jpg',
+  '54-kitty.jpg',
+  '55-kitty.jpg',
+  '56-poets_cove_pool_free_for_boaters.jpg',
+  '57-its_raining_out_there.jpg',
+  '58-friday_harbor_marina.jpg',
+  '58-slip_at_friday_harbor.jpg',
+  '59-fog_for_hours_leaving_friday_harbor.jpg',
+  '60-back_through_deception_pass.jpg',
+  '61-back_at_home_port.jpg',
+  '62-fall_sailing.jpg',
+  '63-short_days_at_the_marina.jpg',
+  '64-covered_for_the_winter.jpg',
+  '65-gone_skiing.jpg',
+];
+    const gallery = document.getElementById('gallery');
+    images.forEach(filename => {
+      const link = document.createElement('a');
+      link.href = `${largeFolder}${filename}`;
+      link.target = "_blank";
+      const img = document.createElement('img');
+      img.src = `${folder}${filename}`;
+      img.alt = filename;
+      link.appendChild(img);
+      gallery.appendChild(link);
+    });
+  </script>
+</body>
+</html>

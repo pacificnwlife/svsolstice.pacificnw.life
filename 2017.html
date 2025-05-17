@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2017 Gallery</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+    .gallery img { height: 150px; border: 2px solid #ccc; }
+    .gallery a { display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>2017 Photo Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const folder = 'images/2017_thumb/';
+    const largeFolder = 'images/2017_large/';
+    const images = [
+  '10-spring_sailing_in_the_sound.jpg',
+  '11-getty_island.jpg',
+  '12-machine_a_custom_slot_for_bow_roller_pin.jpg',
+  '14-cascades_on_the_horizon.jpg',
+  '15-sanddab_for_breakfast.jpg',
+  '16-clams_for_lunch.jpg',
+  '18-camano_head.jpg',
+  '19-running_back_to_port.jpg',
+  '20-sailing_on_the_sound.jpg',
+  '21-camano_island_anchorage.jpg',
+  '22-battery_monitor_is_a_must.jpg',
+  '23-machining_solar_panel_rails.jpg',
+  '25-solar_panel_rail.jpg',
+  '26-3d_printed_solar_panel_fittings.jpg',
+  '27-solar_panel_rail_w_fitting.jpg',
+  '28-machining_solar_panel_rails.jpg',
+  '29-first_install_of_solar_panels.jpg',
+  '31-pushpits_are_prime_seats.jpg',
+  '32-secret_bay_mt_baker_sunrise.jpg',
+  '33-another_killer_breakfast.jpg',
+  '34-mt_baker-secret_bay.jpg',
+  '35-secret_bay.jpg',
+  '36-mt_baker-secret_bay.jpg',
+  '37-smokey_skies_secret_bay.jpg',
+  '38-garrison_bay_english_camp.jpg',
+  '39-turn_point.jpg',
+  '40-smokey_skies_bedwell_harbor.jpg',
+  '41-poets_cove.jpg',
+  '42-bedwell_harbor.jpg',
+  '43-boat_passage_saturna_island.jpg',
+  '44-montague_harbour.jpg',
+  '45-montague_harbour.jpg',
+  '46-anchor_windlass_motor_repair.jpg',
+  '47-montague_harbour_shell_beach.jpg',
+  '48-montague_harbour_shell_beach.jpg',
+  '49-bus_to_the_hummingbird_pub.jpg',
+  '50-bus_to_the_hummingbird_pub_all_must_sing.jpg',
+  '51-sidney_island_spit.jpg',
+  '52-sidney_island.jpg',
+  '53-roche_harbor.jpg',
+  '54-roche_harbor.jpg',
+  '55-roche_harbor.jpg',
+  '56-roche_harbor_mausoleum.jpg',
+  '57-jones_island_marine_park.jpg',
+  '58-seals_at_jones_island_marine_park.jpg',
+  '60-secret_bay.jpg',
+  '61-secret_bay.jpg',
+  '62-secret_bay.jpg',
+  '63-depth_marking_anchor_chain.jpg',
+  '64-happy_crew.jpg',
+  '67-everett_slip.jpg',
+];
+    const gallery = document.getElementById('gallery');
+    images.forEach(filename => {
+      const link = document.createElement('a');
+      link.href = `${largeFolder}${filename}`;
+      link.target = "_blank";
+      const img = document.createElement('img');
+      img.src = `${folder}${filename}`;
+      img.alt = filename;
+      link.appendChild(img);
+      gallery.appendChild(link);
+    });
+  </script>
+</body>
+</html>

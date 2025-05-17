@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2016 Gallery</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+    .gallery img { height: 150px; border: 2px solid #ccc; }
+    .gallery a { display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>2016 Photo Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const folder = 'images/2016_thumb/';
+    const largeFolder = 'images/2016_large/';
+    const images = [
+  '10-survey_day.jpg',
+  '11-surveyor.jpg',
+  '12-surveyor.jpg',
+  '13-installing_zincs.jpg',
+  '14-delivery_seattle-everett.jpg',
+  '15-delivery_seattle-everett.jpg',
+  '16-delivery_seattle-everett.jpg',
+  '17-syra.jpg',
+  '18-companionway.jpg',
+  '19-master_berth.jpg',
+  '20-head.jpg',
+  '21-cabin.jpg',
+  '22-camano_island.jpg',
+  '23-welcome_aboard.jpg',
+  '24-syra.jpg',
+  '25-gauges.jpg',
+  '26-oem_batteries_engine_and_aux.jpg',
+  '27-new_us_batteries_155ah.jpg',
+  '28-battery_crane.jpg',
+  '29-aux_only_620ah.jpg',
+  '30-move_engine_battery_to_lazarette.jpg',
+  '31-visiting_duck.jpg',
+  '32_everett_marina_w_mt_baker_view.jpg',
+  '34-camano_head.jpg',
+  '36-sold_the_throphy_and_shed_a_tear.jpg',
+  '37-bald_eagle.jpg',
+  '38-deb_at_the_helm.jpg',
+  '39-the speed_record_holder_of_8kts.jpg',
+  '40-fun_times_w_friends.jpg',
+  '41-fun_times_w_friends.jpg',
+  '42-camano_head.jpg',
+  '43-dungeness_crab.jpg',
+  '43-fresh_dungeness_crab.jpg',
+  '44-stormy_in_the_strait.jpg',
+  '45-secret_bay.jpg',
+  '46-secret_bay.jpg',
+  '47-secret_bay.jpg',
+  '48-secret_bay.jpg',
+  '49-secret_bay.jpg',
+  '50-secret_bay.jpg',
+  '51-point_colville.jpg',
+  '52-killer_breakfast.jpg',
+  '53-autopilot_in_wind_vane_mode.jpg',
+  '54-sails_easily_move_9_tons_through_the_water.jpg',
+  '55-everett_slip.jpg',
+  '56-warm_and_dry_in_the_cabin.jpg',
+  '57-finishing_the_year_in_a_storm.jpg',
+];
+    const gallery = document.getElementById('gallery');
+    images.forEach(filename => {
+      const link = document.createElement('a');
+      link.href = `${largeFolder}${filename}`;
+      link.target = "_blank";
+      const img = document.createElement('img');
+      img.src = `${folder}${filename}`;
+      img.alt = filename;
+      link.appendChild(img);
+      gallery.appendChild(link);
+    });
+  </script>
+</body>
+</html>

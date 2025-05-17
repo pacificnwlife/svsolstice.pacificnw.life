@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2019 Gallery</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
+    .gallery img { height: 150px; border: 2px solid #ccc; }
+    .gallery a { display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>2019 Photo Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const folder = 'images/2019_thumb/';
+    const largeFolder = 'images/2019_large/';
+    const images = [
+  'img_4314.jpg',
+  'img_4322.jpg',
+  'img_4363.jpg',
+  'img_4364.jpg',
+  'img_4380.jpg',
+  'img_4408.jpg',
+  'img_4414.jpg',
+  'img_4417.jpg',
+  'img_4443.jpg',
+  'img_4446.jpg',
+  'img_4460.jpg',
+  'img_4461.jpg',
+  'img_4471.jpg',
+  'img_4529.jpg',
+  'img_4550.jpg',
+  'img_4559.jpg',
+];
+    const gallery = document.getElementById('gallery');
+    images.forEach(filename => {
+      const link = document.createElement('a');
+      link.href = `${largeFolder}${filename}`;
+      link.target = "_blank";
+      const img = document.createElement('img');
+      img.src = `${folder}${filename}`;
+      img.alt = filename;
+      link.appendChild(img);
+      gallery.appendChild(link);
+    });
+  </script>
+</body>
+</html>
