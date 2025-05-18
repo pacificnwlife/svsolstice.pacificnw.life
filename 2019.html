@@ -53,7 +53,11 @@
 ];
     const gallery = document.getElementById('gallery');
     images.forEach(filename => {
-      const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+    
+    const nameWithoutExt = filename
+      .replace(/\.[^/.]+$/, "")
+      .replace(/^(\d+)-([a-zA-Z])/, (_, n, c) => `${n}. ${c.toUpperCase()}`)
+      .replace(/_/g, " ");
 
       const container = document.createElement('div');
       container.className = 'image-container';
