@@ -8,7 +8,23 @@
     .gallery { display: flex; flex-wrap: wrap; gap: 10px; }
     .gallery img { height: 150px; border: 2px solid #ccc; }
     .gallery a { display: inline-block; }
-  </style>
+  
+    .image-container {
+      display: inline-block;
+      text-align: center;
+    }
+    .watermark {
+      margin-top: -.25em;
+      font-size: 0.85em;
+      font-family: 'Arial', sans-serif;
+      font-weight: 600;      
+      color: #1155c4;
+      opacity: 0.8;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+    }
+
+
+</style>
 </head>
 <body>
   <h1>S/V Solstice 2019 Photo Gallery</h1>
@@ -37,14 +53,27 @@
 ];
     const gallery = document.getElementById('gallery');
     images.forEach(filename => {
+      const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+
+      const container = document.createElement('div');
+      container.className = 'image-container';
+
       const link = document.createElement('a');
       link.href = `${largeFolder}${filename}`;
       link.target = "_blank";
+
       const img = document.createElement('img');
       img.src = `${folder}${filename}`;
       img.alt = filename;
+
+      const caption = document.createElement('div');
+      caption.className = 'watermark';
+      caption.textContent = nameWithoutExt;
+
       link.appendChild(img);
-      gallery.appendChild(link);
+      container.appendChild(link);
+      container.appendChild(caption);
+      gallery.appendChild(container);
     });
   </script>
 </body>
